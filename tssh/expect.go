@@ -406,6 +406,10 @@ func (e *sshExpect) getExpectSender(idx int, question string) *expectSender {
 		return newPassSender(e, secret)
 	}
 
+	if pass := getExConfig(e.args.Destination, fmt.Sprintf("%sExpectSendTextPass%d", e.pre, idx)); pass != "" {
+		return newPassSender(e, pass)
+	}
+
 	if text := getExConfig(e.args.Destination, fmt.Sprintf("%sExpectSendText%d", e.pre, idx)); text != "" {
 		return newTextSender(e, text)
 	}

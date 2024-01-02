@@ -188,6 +188,7 @@ func enableTrzsz(args *sshArgs, ss *sshClientSession) error {
 		DetectTraceLog:  args.TraceLog,
 		EnableZmodem:    enableZmodem,
 		EnableOSC52:     enableOSC52,
+		//Socks:           args.SocksPort,
 	})
 
 	// reset terminal on exit

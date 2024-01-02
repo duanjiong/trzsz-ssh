@@ -58,6 +58,7 @@ type sshArgs struct {
 	IPv4Only       bool        `arg:"-4,--" help:"forces ssh to use IPv4 addresses only"`
 	IPv6Only       bool        `arg:"-6,--" help:"forces ssh to use IPv6 addresses only"`
 	Gateway        bool        `arg:"-g,--" help:"forwarding allows remote hosts to connect"`
+	SocksPort      int         `arg:"--socks" placeholder:"socks" help:"socks proxy"`
 	Background     bool        `arg:"-f,--" help:"run as a background process, implies -n"`
 	NoCommand      bool        `arg:"-N,--" help:"do not execute a remote command"`
 	Port           int         `arg:"-p,--" placeholder:"port" help:"port to connect to on the remote host"`
